@@ -64,7 +64,7 @@ Você pode fazer o download do processo [aqui](https://github.com/SeniorSA/bpm-e
 
 ## 🎈 Iniciando o formulário localmente <a name="onpremise_form"></a>
 
-Faça o clone do repositório ou simplesmente crie os dois arquivos (bpm.js e index.html) em uma pasta (ex: formulario-web) e copie/cole o conteúdo.
+Faça o clone do repositório ou simplesmente crie os dois arquivos ([bpm.js](https://github.com/SeniorSA/bpm-example-form-web/blob/master/bpm.js) e [index.html](https://github.com/SeniorSA/bpm-example-form-web/blob/master/index.html)) em uma pasta (ex: formulario-web) e copie/cole o conteúdo.
 
 > Dica: Utilize o [VSCode](https://code.visualstudio.com/) e instale a extensão [Live Server](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer), desta forma, você não precisará instalar e configurar um servidor Web como NodeJS ou Apache.
 
