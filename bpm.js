@@ -6,7 +6,13 @@ this.workflowCockpit = workflowCockpit({
 });
 
 // Função init é chamada ao abrir o formulário
-function _init(data, info) {  
+function _init(data, info) {
+  
+  // Caso seja executado algum serviço externo ao abrir o formulário e o retorno dele seja atribuído a variáveis de execução
+  // essas variáveis serão preenchidas
+  const { initialVariables } = data.loadContext;
+  console.log(initialVariables);
+  
   info
     .getUserData()
     .then(function (user) {
