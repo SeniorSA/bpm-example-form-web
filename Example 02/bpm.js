@@ -72,10 +72,11 @@ function _saveData(data, info) {
 }
 
 function _rollback(data, info) {
-  /*data: ({
-       error: obj
-       processInstanceId: int
-    })*/
+  console.log(data.error);
+  if (info.isRequestNew()) {
+    return removeData(data.processInstanceId);
+  }
+  return rollbackData(data.processInstanceId);
 }
 
 function isFormValid() {
