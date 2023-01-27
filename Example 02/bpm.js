@@ -5,8 +5,6 @@ this.workflowCockpit = workflowCockpit({
   onError: _rollback,
 });
 
-
-
 // Função init é chamada ao abrir o formulário
 function _init(data, info) {
   // Caso seja executado algum serviço externo ao abrir o formulário e o retorno dele seja atribuído a variáveis de execução
