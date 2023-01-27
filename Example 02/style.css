@@ -1,0 +1,41 @@
+.employee-form {
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+}
+
+.employees-table {
+    padding: 10px;
+    margin: auto;
+    width: 100%;
+}
+
+div.employee-form input[type=text], input[type=number] {
+    width: 100%;
+    padding: 8px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+form div.form-action-buttons {
+    text-align: right;
+}
+
+a {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #0000ee;
+    margin-right: 4px;
+}
+
+label.validation-error {
+    color:   red;
+    margin-left: 5px;
+}
+
+.hide {
+    display:none;
+}
