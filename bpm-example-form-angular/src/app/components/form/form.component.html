@@ -1,0 +1,64 @@
+<form class="row g-3" id="form" novalidate>
+  <div class="col-md-6">
+    <label for="nomFun" class="form-label">Nome solicitante</label>
+    <input type="text" class="form-control" id="nomFun" name="nomFun" disabled />
+  </div>
+  <div class="col-md-6">
+    <label for="emaFun" class="form-label">Email</label>
+    <input type="email" class="form-control" id="emaFun" name="emaFun" disabled />
+  </div>
+  <div class="col-12">
+    <label for="desMot" class="form-label">Motivo solicitação</label>
+    <input type="text" class="form-control" id="desMot" name="desMot" />
+    <div id="desMot" class="form-text">
+      Informe detalhadamente o motivo da sua solicitação.
+    </div>
+  </div>
+  <div class="col-md-6">
+    <label for="nomDes" class="form-label">Destino</label>
+    <input type="text" class="form-control" id="nomDes" name="nomDes" />
+  </div>
+  <div class="col-md-6">
+    <label for="estDes" class="form-label">Estado</label>
+    <select id="estDes" class="form-select" name="estDes">
+      <option selected>Selecione...</option>
+      <option value="Acre - AC">Acre - AC</option>
+      <option value="Alagoas - AL">Alagoas - AL</option>
+      <option value="Amapá - AP">Amapá - AP</option>
+      <option value="Amazonas - AM">Amazonas - AM</option>
+      <option value="Bahia - BA">Bahia - BA</option>
+      <option value="Ceará - CE">Ceará - CE</option>
+      <option value="Espírito Santo - ES">Espírito Santo - ES</option>
+      <option value="Goiás - GO">Goiás - GO</option>
+      <option value="Maranhão - MA">Maranhão - MA</option>
+      <option value="Mato Grosso - MT">Mato Grosso - MT</option>
+      <option value="Mato Grosso do Sul - MS">
+        Mato Grosso do Sul - MS
+      </option>
+      <option value="Minas Gerais - MG">Minas Gerais - MG</option>
+      <option value="Pará - PA">Pará - PA</option>
+      <option value="Paraíba - PB">Paraíba - PB</option>
+      <option value="Paraná - PR">Paraná - PR</option>
+      <option value="Pernambuco - PE">Pernambuco - PE</option>
+      <option value="Piauí - PI">Piauí - PI</option>
+      <option value="Rio de Janeiro - RJ">Rio de Janeiro - RJ</option>
+      <option value="Rio Grande do Norte - RN">
+        Rio Grande do Norte - RN
+      </option>
+      <option value="Rio Grande do Sul - RS">Rio Grande do Sul - RS</option>
+      <option value="Rondônia - RO">Rondônia - RO</option>
+      <option value="Roraima - RR">Roraima - RR</option>
+      <option value="Santa Catarina - SC">Santa Catarina - SC</option>
+      <option value="São Paulo - SP">São Paulo - SP</option>
+      <option value="Sergipe - SE">Sergipe - SE</option>
+      <option value="Tocantins - TO">Tocantins - TO</option>
+      <option value="Distrito Federal - DF">Distrito Federal - DF</option>
+    </select>
+  </div>
+
+  <app-get-cep></app-get-cep>
+  <app-checkbox></app-checkbox>
+  <app-radio></app-radio>
+  <hr>
+  <app-table-crud></app-table-crud>
+</form>

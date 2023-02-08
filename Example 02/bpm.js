@@ -128,9 +128,9 @@ function _saveData(data, info) {
 function _rollback(data, info) {
   console.log("Error: " + JSON.stringify(data.error));
   if (info.isRequestNew()) {
-    return removeData(data.processInstanceId);
+    // return removeData(data.processInstanceId);
   }
-  return rollbackData(data.processInstanceId);
+  // return rollbackData(data.processInstanceId);
 }
 
 function isFormValid() {
@@ -148,6 +148,7 @@ function onSelect() {
   }
 }
 
+// Função do campo CEP que busca as informações
 function getCep() {
   const cepInput = document.querySelector("input[name=cep]");
   
@@ -169,6 +170,8 @@ function getCep() {
   })
 }
 
+
+// Funções da Tabela Dinâmica
 var selectedRow = null;
 
 function onFormSubmit() {
@@ -204,8 +207,10 @@ function insertNewRecord(data) {
   cell4 = newRow.insertCell(3);
   cell4.innerHTML = data.city;
   cell4 = newRow.insertCell(4);
-  cell4.innerHTML = `<a onClick="onEdit(this)"><b>Editar</b></a>
-                     <a onClick="onDelete(this)"><b>Deletar</b></a>`;
+  cell4.innerHTML = `<i class="fa fa-pencil" aria-hidden="true"></i>
+                    <a onClick="onEdit(this)" class=""><b>Editar</b></a>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <a onClick="onDelete(this)"><b>Deletar</b></a>`;
 }
 
 function resetForm() {
@@ -222,6 +227,7 @@ function onEdit(td) {
   document.getElementById("email").value = selectedRow.cells[1].innerHTML;
   document.getElementById("salary").value = selectedRow.cells[2].innerHTML;
   document.getElementById("city").value = selectedRow.cells[3].innerHTML;
+  document.getElementById("fullName").focus();
 }
 
 function updateRecord(formData) {
