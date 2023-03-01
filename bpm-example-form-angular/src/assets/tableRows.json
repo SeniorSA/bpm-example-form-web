@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "name": "José",
+    "country": "Brasil",
+    "total": 32000
+  },
+  {
+    "id": 2,
+    "name": "Maria",
+    "country": "Brasil",
+    "total": 40000
+  },
+  {
+    "id": 3,
+    "name": "Josefina",
+    "country": "Vietnã",
+    "total": 37000
+  },
+  {
+    "id": 4,
+    "name": "Lurde",
+    "country": "Suécia",
+    "total": 33000
+  }
+]

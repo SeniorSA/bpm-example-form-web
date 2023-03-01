@@ -1,0 +1,39 @@
+<div class="row">
+  <h6>Busca CEP</h6>
+  <div class="col-md-4">
+    <label for="numCep" class="form-label">CEP</label>
+    <input
+      type="text"
+      name="cep"
+      class="form-control"
+      id="numCep"
+      #cep
+      (change)="getCep(cep.value)"
+      placeholder="00.000-000"
+    />
+  </div>
+  <div class="col-md-4">
+    <label for="rua" class="form-label">Rua</label>
+    <input type="text" class="form-control" id="rua" name="rua" [(ngModel)]="cepObj.logradouro"/>
+  </div>
+  <div class="col-md-4">
+    <label for="complemento" class="form-label">Complemento</label>
+    <input type="text" class="form-control" id="complemento" name="complemento" [(ngModel)]="cepObj.complemento"/>
+  </div>
+  <div class="col-md-4">
+    <label for="bairro" class="form-label">Bairro</label>
+    <input type="text" class="form-control" id="bairro" name="bairro" [(ngModel)]="cepObj.bairro"/>
+  </div>
+  <div class="col-md-4">
+    <label for="cidade" class="form-label">Cidade</label>
+    <input type="text" class="form-control" id="cidade" name="cidade" [(ngModel)]="cepObj.localidade"/>
+  </div>
+  <div class="col-md-4">
+    <label for="estado" class="form-label">Estado</label>
+    <input type="text" class="form-control" id="estado" name="estado" [(ngModel)]="cepObj.uf"/>
+  </div>
+  <div class="col-md-4">
+    <label for="numero" class="form-label">Número</label>
+    <input type="text" class="form-control" id="numero" name="numero" [(ngModel)]="cepObj.numero"/>
+  </div>
+</div>

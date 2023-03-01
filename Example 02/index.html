@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="ptBR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css">
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto|Varela+Round">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-/bQdsTh/da6pkI1MST/rWKFNjaCP5gBSY4sEBT38Q/9RBh9AH40zEOg7Hlq2THRZ"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.14/iframeResizer.contentWindow.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-polyfill/6.26.0/polyfill.js"></script>
+    <script
+      type="text/javascript"
+      src="https://cdn.senior.com.br/bpm/1.10.0/workflow-cockpit.min.js"
+    ></script>
+    <script type="text/javascript" src="bpm.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <title>BPM Template Form</title>
+  </head>
+  <body style="margin: revert">
+    <form class="row g-3 needs-validation" id="form" novalidate>
+      <div class="col-md-6">
+        <label for="nomFun" class="form-label">Nome solicitante</label>
+        <input type="text" class="form-control" id="nomFun" disabled />
+      </div>
+      <div class="col-md-6">
+        <label for="emaFun" class="form-label">Email</label>
+        <input type="email" class="form-control" id="emaFun" disabled />
+      </div>
+      <div class="col-12">
+        <label for="desMot" class="form-label">Motivo solicitação</label>
+        <input type="text" class="form-control" id="desMot" />
+        <div id="desMot" class="form-text">
+          Informe detalhadamente o motivo da sua solicitação.
+        </div>
+      </div>
+      <div class="col-md-6">
+        <label for="nomDes" class="form-label">Destino</label>
+        <input type="text" class="form-control" id="nomDes" />
+      </div>
+      <div class="col-md-4">
+        <label for="estDes" class="form-label">Estado</label>
+        <select id="estDes" class="form-select">
+          <option selected>Selecione...</option>
+          <option value="Acre - AC">Acre - AC</option>
+          <option value="Alagoas - AL">Alagoas - AL</option>
+          <option value="Amapá - AP">Amapá - AP</option>
+          <option value="Amazonas - AM">Amazonas - AM</option>
+          <option value="Bahia - BA">Bahia - BA</option>
+          <option value="Ceará - CE">Ceará - CE</option>
+          <option value="Espírito Santo - ES">Espírito Santo - ES</option>
+          <option value="Goiás - GO">Goiás - GO</option>
+          <option value="Maranhão - MA">Maranhão - MA</option>
+          <option value="Mato Grosso - MT">Mato Grosso - MT</option>
+          <option value="Mato Grosso do Sul - MS">
+            Mato Grosso do Sul - MS
+          </option>
+          <option value="Minas Gerais - MG">Minas Gerais - MG</option>
+          <option value="Pará - PA">Pará - PA</option>
+          <option value="Paraíba - PB">Paraíba - PB</option>
+          <option value="Paraná - PR">Paraná - PR</option>
+          <option value="Pernambuco - PE">Pernambuco - PE</option>
+          <option value="Piauí - PI">Piauí - PI</option>
+          <option value="Rio de Janeiro - RJ">Rio de Janeiro - RJ</option>
+          <option value="Rio Grande do Norte - RN">
+            Rio Grande do Norte - RN
+          </option>
+          <option value="Rio Grande do Sul - RS">Rio Grande do Sul - RS</option>
+          <option value="Rondônia - RO">Rondônia - RO</option>
+          <option value="Roraima - RR">Roraima - RR</option>
+          <option value="Santa Catarina - SC">Santa Catarina - SC</option>
+          <option value="São Paulo - SP">São Paulo - SP</option>
+          <option value="Sergipe - SE">Sergipe - SE</option>
+          <option value="Tocantins - TO">Tocantins - TO</option>
+          <option value="Distrito Federal - DF">Distrito Federal - DF</option>
+        </select>
+      </div>
+      <div class="col-md-2">
+        <label for="numCep" class="form-label">CEP</label>
+        <input
+          type="text"
+          name="cep"
+          class="form-control"
+          id="numCep"
+          onchange="getCep()"
+          placeholder="00.000-000"
+        />
+      </div>
+      <div class="col-md-4">
+        <label for="rua" class="form-label">Rua</label>
+        <input type="text" class="form-control" id="rua" name="rua" />
+      </div>
+      <div class="col-md-4">
+        <label for="complemento" class="form-label">Complemento</label>
+        <input type="text" class="form-control" id="complemento" name="complemento" />
+      </div>
+      <div class="col-md-4">
+        <label for="bairro" class="form-label">Bairro</label>
+        <input type="text" class="form-control" id="bairro" name="bairro" />
+      </div>
+      <div class="col-md-4">
+        <label for="cidade" class="form-label">Cidade</label>
+        <input type="text" class="form-control" id="cidade" name="cidade"/>
+      </div>
+      <div class="col-md-4">
+        <label for="estado" class="form-label">Estado</label>
+        <input type="text" class="form-control" id="estado" name="estado"/>
+      </div>
+      <div class="col-md-4">
+        <label for="numero" class="form-label">Número</label>
+        <input type="text" class="form-control" id="numero" name="numero"/>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row-6">
+          <h6>Selecione a opção</h6>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="option1" value="1" name="option">
+            <label class="form-check-label" for="option1">
+              Opção 1
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="option2" value="2" name="option">
+            <label class="form-check-label" for="option2">
+              Opção 2
+            </label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="checkbox" id="option3" value="3" name="option" disabled>
+            <label class="form-check-label" for="option3">
+              Opção 3 (desativado)
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6">
+        <div class="row-6">
+          <h6>Selecione a escolha</h6>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radio" id="radio1" value="radio1">
+            <label class="form-check-label" for="radio1">
+              Escolha 1
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radio" id="radio2" value="radio2">
+            <label class="form-check-label" for="radio2">
+              Escolha 2
+            </label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="radio" id="radio3" value="radio3">
+            <label class="form-check-label" for="radio3">
+              Escolha 3
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-12">
+        <label for="formTextarea1">Descrição</label>
+        <textarea class="form-control" id="formTextarea1" rows="4" placeholder="Descreva algo aqui..."></textarea>
+      </div>
+      
+      <div class="employee-form">
+        <h4><center>Tabela Dinâmica</center></h4>
+        <form autocomplete="off">
+            <div>
+                <label>Nome completo</label><label class="validation-error hide" id="fullNameValidationError">Esse campo é obrigatório.</label>
+                <input type="text" name="fullName" id="fullName">
+            </div>
+            <div>
+                <label>Email</label>
+                <input type="text" name="email" id="email">
+            </div>
+            <div>
+                <label>Salário</label>
+                <input type="text" name="salary" id="salary">
+            </div>
+            <div>
+                <label>Cidade</label>
+                <input type="text" name="city" id="city">
+            </div>
+            <div class="form-action-buttons">
+                <input type="button" class="btn btn-primary" value="Criar cadastro" onclick="onFormSubmit()">
+            </div>
+          </form>
+        </div>
+        <div class="employees-table">
+          <table class="table table-bordered" id="employeeList">
+              <thead>
+                <tr>
+                    <th>Nome completo</th>
+                    <th>Email</th>
+                    <th>Salário</th>
+                    <th>Cidade</th>
+                    <th>Ações</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Joana Gomes</td>
+                  <td>joanag@email.com</td>
+                  <td>R$ 8200</td>
+                  <td>Porto Alegre</td>
+                  <td>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <a onClick="onEdit(this)"><b>Editar</b></a>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <a onClick="onDelete(this)"><b>Deletar</b></a>
+                  </td>
+                <tr>
+                  <td>Cátia Silva</td>
+                  <td>csilva@email.com</td>
+                  <td>R$ 5600</td>
+                  <td>Blumenau</td>
+                  <td>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <a onClick="onEdit(this)" class=""><b>Editar</b></a>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <a onClick="onDelete(this)"><b>Deletar</b></a>
+                  </td>
+                </tr>
+                <tr>
+                  <td>José Albino</td>
+                  <td>josealb@email.com</td>
+                  <td>R$ 4800</td>
+                  <td>Curitiba</td>
+                  <td>
+                    <i class="fa fa-pencil" aria-hidden="true"></i>
+                    <a onClick="onEdit(this)" class=""><b>Editar</b></a>
+                    <i class="fa fa-trash" aria-hidden="true"></i>
+                    <a onClick="onDelete(this)"><b>Deletar</b></a>
+                  </td>
+                </tr>
+              </tr>
+              </tbody>
+          </table>
+        </div>
+      
+      <div class="col-md-12">
+        <label for="range1" class="form-label">Avaliação (0 a 10)</label>
+        <input type="range" min="0" max="10" class="form-range" id="range1" name="avaliacao">
+      </div>
+
+      <div class="col-12">
+        <div class="form-check">
+          <input  
+            class="form-check-input"
+            type="checkbox"
+            id="gridCheck"
+            onclick="onSelect()"
+            required
+          />
+          <label class="form-check-label" for="gridCheck">
+            Declaro que estou ciente com os termos
+          </label>
+          <div class="invalid-feedback">
+            Você precisa aceitar os termos para prosseguir.
+          </div>
+        </div>
+      </div>
+
+      <!-- Para formulários do BPM, não é necessário colocar botões para submit, basta usar o botão 'Enviar' do próprio BPM -->
+      <!-- <button type="submit" class="btn btn-primary" onclick="isFormValid()">Submit</button> -->
+    </form>
+  </body>
+</html>

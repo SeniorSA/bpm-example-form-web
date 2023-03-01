@@ -1,0 +1,68 @@
+<div class="card">
+  <!-- <h4>Tabela Dinâmica</h4> -->
+      <p-table #table [value]="tableRows" id="crudTable" dataKey="id" editMode="row" [tableStyle]="{'min-width': '50rem'}">
+          <ng-template pTemplate="header">
+              <tr>
+                  <th style="width:20%">Id</th>
+                  <th style="width:20%">Nome</th>
+                  <th style="width:20%">País</th>
+                  <th style="width:20%">Total</th>
+                  <th style="width:20%" class="justify-content-right">
+                    <button pButton type="button" pAddNewRow [table]="table" [newRow]="newRow()" label="Adicionar" icon="pi pi-plus" iconPos="left" class="p-button p-button-text"></button>
+                  </th>
+              </tr>
+          </ng-template>
+          <ng-template pTemplate="body" let-row let-editing="editing" let-ri="rowIndex">
+              <tr [pEditableRow]="row">
+                  <td id="id{{ri}}">
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="row.id">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{row.id}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td id="name{{ri}}">
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="row.name" required>
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{row.name}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td id="country{{ri}}">
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="row.country" required>
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{row.country}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td id="total{{ri}}">
+                      <p-cellEditor>
+                          <ng-template pTemplate="input">
+                              <input pInputText type="text" [(ngModel)]="row.total">
+                          </ng-template>
+                          <ng-template pTemplate="output">
+                              {{row.total | currency: 'BRL'}}
+                          </ng-template>
+                      </p-cellEditor>
+                  </td>
+                  <td>
+                      <div class="flex align-items-center justify-content-center gap-2">
+                          <button *ngIf="!editing" pButton pRipple type="button" pInitEditableRow icon="pi pi-pencil" (click)="onRowEditInit(row)" class="p-button-rounded p-button-text"></button>
+                          <button *ngIf="!editing" pButton pRipple type="button" icon="pi pi-trash" (click)="deleteRow(row, ri)" class="p-button-danger p-button-text"></button>
+                          <button *ngIf="editing" pButton pRipple type="button" pSaveEditableRow icon="pi pi-check" (click)="onRowEditSave(row)" class="p-button-rounded p-button-text p-button-success mr-2"></button>
+                          <button *ngIf="editing" pButton pRipple type="button" pCancelEditableRow icon="pi pi-times" (click)="onRowEditCancel(row, ri)" class="p-button-rounded p-button-text p-button-danger"></button>
+                      </div>
+                  </td>
+              </tr>
+          </ng-template>
+      </p-table>
+  </div>
