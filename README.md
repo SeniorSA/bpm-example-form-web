@@ -108,7 +108,7 @@ Contempla os seguintes campos:
 - Formulário de CEP, buscando e preenchendo as informações com o cep inserido
 - Caixas de marcação (checkbox)
 - Opções em rádio (radio)
-- Tabela dinâmica (crud), onde é possível incluir, modificar e deletar colunas_
+- Tabela dinâmica (crud), onde é possível incluir, modificar e deletar colunas
 
 ### Exemplo Angular
 
