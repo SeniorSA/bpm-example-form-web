@@ -5,7 +5,7 @@
 
 ---
 
-<p align="center"> Formulário Angular de exemplo para ser utilizado dentro do BPM da Senior Sistemas
+<p align="center"> Formulário JavaScript e Angular de exemplo para serem utilizados dentro do BPM da Senior Sistemas
     <br> 
 </p>
 
@@ -15,6 +15,7 @@
 - [Configurações no BPM](#bpm_configuration)
 - [Iniciando o formulário localmente](#onpremise_form)
 - [Usando o formulário no BPM](#usage)
+- [Modelos de formulários](#form_template)
 
 ## 🧐 Sobre <a name = "about"></a>
 
@@ -83,9 +84,37 @@ Acesse `Senior X Platform` > `BPM` > `Central de Tarefas` e selecione `Nova Soli
 
 ![image](https://user-images.githubusercontent.com/28518259/136284495-c1874784-0747-40cf-a61a-367711ea364e.png)
 
-## Modelo de Formulário Externo Web
+## Modelo de Formulário Externo Web <a name = "form_template"></a>
 
-Este formulário contempla os componentes:
+### Exemplo 01
+
+Este formulário está construído em JavaScript puro.
+Contempla os seguintes campos:
+
+- Campos de texto
+- Busca e preenchimento do nome do solicitante e seu email
+- Campo de seleção única
+- Formulário de CEP, buscando e preenchendo as informações com o cep inserido
+- Caixa de marcação (checkbox)
+
+### Exemplo 02
+
+Este formulário está construído em JavaScript puro.
+Contempla os seguintes campos:
+
+- Campos de texto
+- Busca e preenchimento do nome do solicitante e seu email
+- Campo de seleção única
+- Formulário de CEP, buscando e preenchendo as informações com o cep inserido
+- Caixas de marcação (checkbox)
+- Opções em rádio (radio)
+- Tabela dinâmica (crud), onde é possível incluir, modificar e deletar colunas_
+
+### Exemplo Angular
+
+Este formulário é um projeto Angular e foi construído usando o [Angular CLI](https://github.com/angular/angular-cli) versão 15.0.4, e utiliza a biblioteca de componentes [PrimeNG](https://primeng.org/)
+
+Contempla os seguintes componentes:
 
 - Campos de texto
 - Busca e preenchimento do nome do solicitante e seu email
@@ -95,10 +124,6 @@ Este formulário contempla os componentes:
 - Opções em rádio (radio)
 - Tabela dinâmica (crud), onde é possível incluir, modificar e deletar colunas
 
-## BpmExampleFormAngular
+#### Desenvolvimento Angular
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.0.4.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+Execute `ng serve` para subir um ambiente de desenvolvimento. Navegue para `http://localhost:4200/`. A aplicação reiniciará automaticamente se você mudar qualquer código fonte.
